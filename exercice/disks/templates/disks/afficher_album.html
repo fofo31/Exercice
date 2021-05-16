@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+#album {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#album td, #album th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#album th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: white;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+<table id="album">
+    <tr>
+    <th>Title</th>
+    <th>UnitPrice</th>
+    </tr>
+
+    <h1>{{album.title}} par {{album.artist}}</h1>
+
+    {% for titres in tous_titres %}
+    <div class ="titres">
+
+        <tr>
+            <th>{{titres.name}}</th>
+            <th>{{titres.unitprice}}</th>
+
+        </tr>
+
+    </div>
+
+{%empty%}
+    <p>Aucun titre.</p>
+
+{%endfor%}
+
+
+</table>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<style>
+#accueil {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#accueil td, #accueil th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#accueil th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: white;
+  color: black;
+}
+#accueil tr:nth-child(1){background-color: grey;}
+
+</style>
+</head>
+<body>
+
+<table id="accueil">
+    <tr>
+    <th>Title</th>
+    <th>Artist</th>
+    </tr>
+
+    <h1>Bienvenue dans la librairie d'albums</h1>
+
+    {% for album in tous_albums %}
+    <div class ="album">
+
+    <tr>
+
+        <th><a href= "{% url 'afficher_album' album.id %}">{{album.title}}</a></th>
+        <th> {{album.artist}}
+    </div>
+
+    </tr>
+
+
+
+{%empty%}
+    <p>Aucun article.</p>
+{%endfor%}
+
+
+
+
+</table>
+
+
+
+
+
+
+
+
+</body>
+</html>
